@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{#    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'skin_/login.css' %}">
+    <script type="text/javascript" src="{% static 'jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery.select.js' %}"></script>
+    <title>数字管理系统_用户登录</title>
+</head>
+<body>
+<div id="container" style="height: 445px;">
+    <div id="bd" style="padding-top: 115.5px;">
+        <div id="main">
+            <div class="login-box">
+                <div id="logo"></div>
+                <h1></h1>
+                <div class="input username" id="username">
+                    <label for="userName">用户名</label>
+                    <span></span>
+                    <input type="text" id="userName">
+                </div>
+                <div class="input psw" id="psw">
+                    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <span></span>
+                    <input type="password" id="password">
+                </div>
+                <div class="input validate" id="validate">
+                    <label for="valiDate">验证码</label>
+                    <input type="text" id="valiDate">
+                    <div class="value">X3D5</div>
+                </div>
+                <div class="styleArea">
+                    <div class="styleWrap">
+                        <div id="_iSelWrap_iSel-4257" class="iselect-wrapper"><select name="style" id="iSel-4257"
+                                                                                      class="iselect">
+                            <option value="默认风格">默认风格</option>
+                            <option value="红色风格">红色风格</option>
+                            <option value="绿色风格">绿色风格</option>
+                        </select><span id="_iSelVal_iSel-4257" class="iselwrap-val">默认风格</span></div>
+                    </div>
+                </div>
+                <div id="btn" class="loginButton">
+                    <input type="button" class="button" value="登录">
+                </div>
+            </div>
+        </div>
+        <div id="ft">CopyRight&nbsp;2014&nbsp;&nbsp;版权所有&nbsp;&nbsp;Uimaker.com 仅供学习参考 &nbsp;&nbsp;苏ICP备09003079号</div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var height = $(window).height() > 445 ? $(window).height() : 445;
+    $("#container").height(height);
+    var bdheight = ($(window).height() - $('#bd').height()) / 2 - 20;
+    $('#bd').css('padding-top', bdheight);
+    $(window).resize(function (e) {
+        var height = $(window).height() > 445 ? $(window).height() : 445;
+        $("#container").height(height);
+        var bdheight = ($(window).height() - $('#bd').height()) / 2 - 20;
+        $('#bd').css('padding-top', bdheight);
+    });
+    $('select').select();
+
+    $('.loginButton').click(function (e) {
+        document.location.href = "main.html";
+    });
+</script>
+
+</body>
+</html>
